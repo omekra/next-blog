@@ -10,7 +10,6 @@ const postSchema = new Schema(
     },
     desc: {
       type: String,
-      unique: true,
       required: true,
     },
     img: {
@@ -29,4 +28,4 @@ const postSchema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose("Post", postSchema);
+export default mongoose.models.Post || mongoose.model("Post", postSchema);
